@@ -17,7 +17,8 @@ OBJ_PATH = obj/
 SRC_PATH = srcs/
 SHELL = /bin/bash
 
-SRC_NAME =	main.c
+SRC_NAME =	main.c			\
+			getOptions.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))

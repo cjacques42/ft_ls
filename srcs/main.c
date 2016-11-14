@@ -14,5 +14,17 @@
 
 int				main(int ac, char **av)
 {
+	int			options;
+	char		c;
+
+	c = 0;
+	av++;
+	options = ft_getOptions(&ac, av, &c);
+	ft_printf("Option: %d", options, options);
+	if (c)
+	{
+		ft_printf("ls: illegal option -- %c\nusage: ls [-%s] [file ...]\n", c, OPTION_CHARS);
+		return (1);
+	}
 	return (0);
 }

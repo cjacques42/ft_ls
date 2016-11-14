@@ -18,4 +18,8 @@
 # include "libft.h"
 # include "unistd.h"
 
+# define OPTION_CHARS "Ralrt"
+
+int			ft_getOptions(int *ac, char **av, char *c);
+
 #endif
