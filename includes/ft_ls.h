@@ -16,10 +16,16 @@
 # include "get_next_line.h"
 # include "ft_printf.h"
 # include "libft.h"
-# include "unistd.h"
+# include <unistd.h>
+# include <dirent.h>
+# include <stdlib.h>
+# include <string.h>
+# include <stdio.h>
+# include <errno.h>
 
 # define OPTION_CHARS "Ralrt"
 
 int			ft_getOptions(int *ac, char **av, char *c);
+int			ft_getPathFromParam(int ac, char **av, t_list **lst_rep, t_list **lst_file);
 
 #endif

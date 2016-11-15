@@ -15,16 +15,22 @@
 int				main(int ac, char **av)
 {
 	int			options;
+	t_list		*lst_rep;
+	t_list		*lst_file;
 	char		c;
+	int			ret;
 
 	c = 0;
+	lst_rep = NULL;
+	lst_file = NULL;
 	av++;
 	options = ft_getOptions(&ac, av, &c);
-	ft_printf("Option: %d", options, options);
+	ft_printf("Option : %d -- param : %s\n", options, *av);
 	if (c)
 	{
 		ft_printf("ls: illegal option -- %c\nusage: ls [-%s] [file ...]\n", c, OPTION_CHARS);
 		return (1);
 	}
+	ret = ft_getPathFromParam(ac, av, &lst_rep, &lst_file);
 	return (0);
 }
