@@ -23,8 +23,8 @@ int				main(int ac, char **av)
 	c = 0;
 	lst_rep = NULL;
 	lst_file = NULL;
-	av++;
-	options = ft_getOptions(&ac, av, &c);
+	options = 0;
+	av = ft_getOptions(&ac, ++av, &c, &options);
 	ft_printf("Option : %d -- param : %s\n", options, *av);
 	if (c)
 	{

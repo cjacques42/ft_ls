@@ -33,18 +33,14 @@ int		ft_parseParam(char *str, char *c)
 	return (option);
 }
 
-int		ft_getOptions(int *ac, char **av, char *c)
+char	**ft_getOptions(int *ac, char **av, char *c, int *option)
 {
-	int		option;
 	int		ret;
 
-	option = 0;
 	while (*ac > 1)
 	{
 		if (*av && ft_strcmp(*av, "-") == 0)
-		{
-			return (option);
-		}
+			return (av);
 		else if (*av && ft_strcmp(*av, "--") == 0)
 		{
 			(*ac)--;
@@ -53,21 +49,15 @@ int		ft_getOptions(int *ac, char **av, char *c)
 		else if (*av && **av == '-')
 		{
 			ret = ft_parseParam(*av, c);
-			if (ret == -1)
-			{
-				return (ret);
-			}
+			if (ret == -1 && (*option = ret))
+				return (av);
 			else
-			{
-				option |= ret;
-			}
+				*option |= ret;
 		}
 		else
-		{
-			return (option);
-		}
+			return (av);
 		av++;
 		(*ac)--;
 	}
-	return (option);
+	return (av);
 }

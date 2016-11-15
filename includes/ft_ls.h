@@ -25,7 +25,7 @@
 
 # define OPTION_CHARS "Ralrt"
 
-int			ft_getOptions(int *ac, char **av, char *c);
+char		**ft_getOptions(int *ac, char **av, char *c, int *option);
 int			ft_getPathFromParam(int ac, char **av, t_list **lst_rep, t_list **lst_file);
 
 #endif
